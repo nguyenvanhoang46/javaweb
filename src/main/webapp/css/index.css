@@ -463,3 +463,122 @@
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
+
+
+
+.item-column-cart {
+        border-radius: 2px;
+        /* box-shadow:  2px 1px 1px 2px #787373; */
+        background: white;
+        margin: 10px;
+        padding: 5px;
+
+        position: relative;
+
+    }
+
+    .item-img-cart {
+        width: 30%;
+        float: left;
+        padding-top: 55px;
+
+    }
+
+    .image-cart {
+        width: 100px;
+        /* max-width: 50px; */
+        height: 98px;
+        float: left;
+        margin-top: -80px;
+        position: absolute;
+        left: -4%;
+
+    }
+
+    .cart-total {
+        padding: 10px;
+    }
+
+    .ten-item-column-cart {
+        width: 70%;
+        float: right;
+    }
+
+    .item-column-cart .ten-item-column-cart a {
+        color: black;
+        text-decoration: none;
+        font-weight: 600;
+        text-transform: capitalize;
+        font-size: 16px;
+
+    }
+
+    .gia-cart {
+        font-size: 13px;
+        color: red;
+        font-weight: 900;
+        font-family: Tahoma;
+    }
+
+    .soluong-cart {
+
+        font-size: 17px;
+        color: red;
+        width: 50px;
+        font-family: Tahoma;
+        height: 30px;
+        position: absolute;
+        top: 14%;
+        right: 20%;
+    }
+
+    .btn-remove {
+        color: rgb(54, 12, 12);
+        border: 1px solid rgb(54, 12, 12);
+        border-radius: 5px;
+        background: #fff;
+        height: 30px;
+        width: 20%;
+        margin-left: 25%;
+        position: absolute;
+        /* left: 10px; */
+        top: 14%;
+        right: -4%;
+    }
+
+    .btn-remove:hover {
+        color: white;
+        border: 1px solid rgb(54, 12, 12);
+        background: rgb(54, 12, 12);
+        border-radius: 5px;
+
+    }
+
+    .column-cart {
+        width: 400px;
+        height: auto;
+        box-shadow: 2px 3px 1px 1px #0e0e0e7a;
+        background: #fff;
+        display: none;
+        border-radius: 5px;
+        position: absolute;
+        right: 3%;
+        top: 18%;
+    }
+
+    .active {
+        display: block !important;
+    }
+
+    .add-to-cart {
+        background: rgb(218, 17, 17);
+    }
+
+    .gio_hang {
+        z-index: 10;
+    }
+
+    .add-like {
+        margin-top: 0px;
+        margin-left: -3px;
+    }
