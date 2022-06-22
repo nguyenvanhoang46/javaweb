@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,18 +9,21 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/index.css" type="text/css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" type="text/css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/glider.css" type="text/css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="font/fontawesome-free-6.1.1-web/css/all.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="./fonts/fontawesome-free-6.0.0/fontawesome-free-6.0.0-web/css/all.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'> 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./fonts/fontawesome-free-6.0.0/fontawesome-free-6.0.0-web/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </head>
 <body>
-<jsp:include page="header.jsp" />
+
+
+
             <!-- slider -->
             <div class="slider">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -146,6 +150,7 @@
                         aria-labelledby="pills-home-tab">
                         <div id="rendenrProduct"
                             class="row ms-1 large-columns-5 medium-columns-3 small-columns-2 row-normal">
+                            <c:forEach items="${listP}" var="product" > 
                             <div class="col ">
                                 <div class="mt-3 mb-4">
                                     <div class="card" style="width: 14rem; height: 390px;">
@@ -155,10 +160,10 @@
                                             class="card-img-top image image" alt="...">
                                         <div class="card-body">
                                             <div class="card-body-item ms-2">
-                                                <h6 class="card-title ms-5 ten-item-column ">Classico 11</h6>
+                                                <h6 class="card-title ms-5 ten-item-column ">${product.name}</h6>
                                                 <p class="card-text ms-3">
                                                     <span class="strike"> <strike>700,000 <u>đ</u></strike> </span>
-                                                    <span class="span-price gia">500,000 <u>đ</u></span>
+                                                    <span class="span-price gia">${product.price}<u>đ</u></span>
                                                 </p>
                                                 <button
                                                     class="btn text-light ms-4 cart-slider add-to-cart add-to-cart">Thêm
@@ -169,7 +174,7 @@
                                     </div>
                                 </div>
                             </div>
-
+							</c:forEach>
                             <!-- rendenrProduct -->
 
                         </div>
@@ -631,23 +636,10 @@
                 </div>
             </div>
        		</div>
-<jsp:include page="footer.jsp" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="./js/Glider.js-master/Glider.js-master/glider.min.js"></script>    
-	<script>
-        new Glider(document.querySelector('.glider'), {
-            slidesToShow: 4,
-            slidesToScroll: 5,
-            draggable: true,
-            dots: '.dots',
-            arrows: {
-                prev: '.glider-prev',
-                next: '.glider-next'
-            }
-        });
-    </script>  
+
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+  
     
 </body>
 </html>
